@@ -69,6 +69,6 @@ Then, go to [http://localhost:5000](http://localhost:5000) in your browser.
 - 🔓 Ensure ports 5000 and the WhatsApp sandbox number are accessible.
 - 📤 Twilio Sandbox code should be shared with the test WhatsApp number to initiate messages.
 
-
+### For Queries contact: kurraswethavanaja@gmail.com
 
 
