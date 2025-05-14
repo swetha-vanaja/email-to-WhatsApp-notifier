@@ -51,6 +51,9 @@ pip install -r requirements.txt
 
 - Sign up at [Twilio](https://www.twilio.com/) and join the WhatsApp sandbox.
 - Add your sandbox SID, Auth Token, and WhatsApp number in the code (`app.py`).
+- Save the details of client_secrets.json and twilio auth token details in .env file.
+- Add .env and client_secrets.json to .gitignore (useful when you try to push code into git repo)
+  
 
 ### 6. ▶️ Run the App
 
