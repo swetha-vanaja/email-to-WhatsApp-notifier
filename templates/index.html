@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email to WhatsApp Notifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Email to WhatsApp Notifier</h1>
+            <p class="tagline">Get your important emails delivered straight to WhatsApp</p>
+        </header>
+
+        <div class="card">
+            <h2>Email to WhatsApp Bridge</h2>
+            <p>Never miss an important email again! Our service monitors your inbox and sends you a notification on WhatsApp whenever you receive a new email.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">✉️</div>
+                    <h3>Email Monitoring</h3>
+                    <p>We securely monitor your inbox for new messages</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>WhatsApp Delivery</h3>
+                    <p>Get notifications directly on WhatsApp</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Smart Summaries</h3>
+                    <p>AI-powered email summaries for quick understanding</p>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="{{ url_for('login') }}" class="btn btn-primary">Get Started with Google</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>How It Works</h2>
+            <ol class="steps">
+                <li>
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <h3>Connect your Gmail</h3>
+                        <p>Securely connect your Gmail account using Google's authentication</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <h3>Setup WhatsApp</h3>
+                        <p>Join the Twilio WhatsApp sandbox and connect your number</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <h3>Start the Service</h3>
+                        <p>Activate the service and receive email notifications on WhatsApp</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>Privacy & Security</h2>
+            <p>We take your privacy seriously. Our service:</p>
+            <ul class="privacy-list">
+                <li>Uses OAuth2 for secure Gmail access (we never see your password)</li>
+                <li>Does not store your email content</li>
+                <li>Only processes unread emails</li>
+                <li>Encrypts all communications</li>
+                <li>Can be turned off at any time</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Email to WhatsApp Notifier &copy; 2025 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

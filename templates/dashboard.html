@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Email to WhatsApp Notifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Email to WhatsApp Notifier</h1>
+            <div class="user-info">
+                <span id="user-email">{{ email }}</span>
+                <a href="{{ url_for('logout') }}" class="btn btn-small">Logout</a>
+            </div>
+        </header>
+
+        <div id="setup-steps">
+            <!-- Step 1: Connection Status -->
+            <div class="card" id="connection-card">
+                <h2>Step 1: Google Connection</h2>
+                <div class="status-section">
+                    <div class="status success">
+                        <span class="status-icon">✓</span>
+                        <span class="status-text">Connected to Gmail</span>
+                    </div>
+                    <p>Your Google account has been successfully connected.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: WhatsApp Setup -->
+            <div class="card" id="whatsapp-card">
+                <h2>Step A: Set Up WhatsApp with Twilio</h2>
+                <div class="alert alert-info">
+                    <strong>Connect WhatsApp:</strong> Before receiving notifications, you need to connect your WhatsApp to our service.
+                </div>
+                
+                <div class="twilio-info">
+                    <p>Send the following message to <strong>{{ twilio_number }}</strong> on WhatsApp:</p>
+                    <div class="code-block">
+                        <code>join {{ sandbox_code }}</code>
+                    </div>
+                    <p><small>This allows Twilio to send you WhatsApp messages.</small></p>
+                </div>
+                
+                <h2>Step B: Verify Your WhatsApp Number</h2>
+                <div style="margin-top: 20px;">
+                    <label for="whatsapp-number">Your WhatsApp Number (with country code):</label>
+                    <input type="tel" id="whatsapp-number" placeholder="+91XXXXXXXXXX" required>
+                    <p><small>Example: +918688573352</small></p>
+                </div>
+                
+                <div class="button-group">
+                    <button id="verify-button" class="btn">Verify Connection</button>
+                </div>
+
+                <div id="verification-message" class="hidden"></div>
+            </div>
+
+            <!-- Step 3: Service Control -->
+            <div class="card hidden" id="service-card">
+                <h2>Email to WhatsApp Service</h2>
+                <div id="service-alert" class="alert alert-success">
+                    <strong>Success!</strong> Your service is now active.
+                </div>
+                
+                <div class="service-info">
+                    <p><span class="status-dot active" id="status-dot"></span> <strong>Service Status:</strong> <span id="service-status">Active</span></p>
+                    <p><strong>Connected Email:</strong> <span id="connected-email">{{ email }}</span></p>
+                    <p><strong>WhatsApp Number:</strong> <span id="connected-whatsapp"></span></p>
+                    <p><strong>Last Checked:</strong> <span id="last-checked">Just now</span></p>
+                </div>
+
+                <div class="button-group">
+                    <button id="start-service-button" class="btn btn-success">Start Service</button>
+                    <button id="stop-service-button" class="btn btn-danger hidden">Stop Service</button>
+                    <button id="check-now-button" class="btn hidden">Check Emails Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="instructions-card">
+            <h2>How It Works</h2>
+            <ol class="instructions">
+                <li><strong>Authentication:</strong> You've signed in with your Google account to allow us to monitor your unread emails.</li>
+                <li><strong>WhatsApp Setup:</strong> Connect your WhatsApp by sending the code to Twilio's sandbox number.</li>
+                <li><strong>Notifications:</strong> You'll receive a WhatsApp message with a summary whenever you get a new email.</li>
+                <li><strong>Privacy:</strong> Your data is secure and processed on our secure servers. We never store your email content.</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>Email to WhatsApp Notifier &copy; 2025 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

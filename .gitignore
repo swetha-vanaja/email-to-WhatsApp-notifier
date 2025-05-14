@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask
+instance/
+.env
+.flaskenv
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+
+# Secrets and credentials (DO NOT commit these)
+client_secrets.json
+credentials.json
+.credentials/
+.env
+
+# IDE/Editor Files
+.idea/
+.vscode/
+.sublime-project
+.sublime-workspace
+
+# Log files
+*.log
+
+# Python bytecode files
+*.pyc
+*.pyo
+
+# Twilio sandbox log files
+twilio.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
